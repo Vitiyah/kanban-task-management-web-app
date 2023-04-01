@@ -162,20 +162,34 @@ body {
 .kanban-task {
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   display: none;
-}
-
-.kanban-task:nth-child(1) {
-  background-color: blue;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1rem;
+  color: var(--font-gray);
 }
 
 .active {
-  display: flex;
+  display: grid;
 }
 
-.kanban-todo {
-  height: 100%;
-  background-color: yellow;
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.15rem;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgb(246, 234, 126);
+}
+
+.circle-2 {
+  background: var(--light-purple);
+}
+
+.circle-3 {
+  background: rgb(9, 203, 203);
 }
