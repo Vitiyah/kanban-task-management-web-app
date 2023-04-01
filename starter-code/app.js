@@ -8,12 +8,20 @@ const hideSidebar = document.querySelector(".hide-sidebar");
 const sideBar = document.querySelector(".kanban-sidebar");
 const contents = document.querySelectorAll(".kanban-task");
 const newKanban = document.querySelector(".kanban-tasks");
+const file = "./data.json";
 let count = 3;
+
+async function getText(file) {
+  let x = await fetch(file);
+  let y = await x.text();
+  // console.log(y);
+}
 
 const kanbanFunc = () => {
   addMenu();
   titleChange();
   contentChange();
+  getText(file);
 };
 
 const addMenu = () => {
@@ -77,5 +85,7 @@ const contentChange = () => {
     });
   });
 };
+
+const addTask = () => {};
 
 kanbanFunc();
