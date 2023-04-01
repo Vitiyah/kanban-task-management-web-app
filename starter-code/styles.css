@@ -1,0 +1,181 @@
+/* Universal CSS Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Root Variables */
+
+:root {
+  --gray-purple: rgb(33, 31, 37);
+  --light-gray-purple: rgb(47, 43, 55);
+  --light-purple: rgb(163, 132, 224);
+  --purple: rgb(116, 95, 160);
+  --dark-purple: rgb(109, 75, 183);
+  --font-family: "Barlow Semi Condensed", sans-serif;
+  --font-white: #fff;
+  --font-gray: #c1bbbb;
+}
+
+/* Global Styling */
+
+body {
+  background: var(--gray-purple);
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-family);
+}
+
+/* Logo styling */
+
+.kanban-logo {
+  display: flex;
+  gap: 0.2rem;
+}
+
+/* Kanban styling */
+
+.kanban-hero {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+.kanban-sidebar {
+  width: 300px;
+  height: 100%;
+  background: var(--light-gray-purple);
+}
+
+.kanban-header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding-left: 1rem;
+}
+
+.kanban-sidebar-inner {
+  padding: 1.5rem 1rem 1.5rem 0rem;
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  border-radius: 0 30px 30px 0;
+  list-style-type: none;
+  text-decoration: none;
+  transition: all 0.1s ease-in;
+  position: relative;
+}
+
+.menu img {
+  padding-left: 1rem;
+}
+
+.menu p {
+  color: var(--font-gray);
+  font-weight: 600;
+}
+
+.kanban-menu-add {
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--light-purple);
+  cursor: pointer;
+  padding-left: 1rem;
+}
+
+.cross {
+  position: absolute;
+  width: 8.5%;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+.kanban-count {
+  font-size: 0.8rem;
+  margin: 1rem 0;
+  color: var(--font-gray);
+  letter-spacing: 2px;
+  padding-left: 1rem;
+}
+
+.kanban-totalbox {
+  height: 70%;
+  overflow: scroll;
+}
+
+.kanban-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 5rem;
+  background: var(--light-gray-purple);
+  padding: 1rem;
+  color: var(--font-white);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.kanban-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.new-task-btn {
+  width: 8rem;
+  padding: 0.5rem;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: var(--dark-purple);
+  color: var(--font-white);
+}
+
+.menu:focus {
+  background-color: var(--dark-purple);
+}
+
+/* Main Kanban Styling */
+
+.kanban-tasks {
+  width: 100%;
+  height: calc(100% - 5rem);
+  background-color: var(--gray-purple);
+}
+
+.kanban-task {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  display: none;
+}
+
+.kanban-task:nth-child(1) {
+  background-color: blue;
+}
+
+.active {
+  display: flex;
+}
+
+.kanban-todo {
+  height: 100%;
+  background-color: yellow;
+}

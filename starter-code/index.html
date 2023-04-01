@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@200;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link stylesheet -->
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Kanban task management web app</title>
+  </head>
+  <body>
+    <div class="kanban-hero">
+      <div class="kanban-sidebar">
+        <div class="kanban-sidebar-inner">
+          <div class="kanban-header">
+            <div class="kanban-name">
+              <img src="./assets/logo-light.svg" alt="" />
+            </div>
+          </div>
+          <div class="kanban-count">
+            <p>ALL BOARDS (<span class="count">3</span>)</p>
+          </div>
+          <div class="kanban-totalbox">
+            <div class="kanban-menu">
+              <a href="#1" class="menu" data-id="1">
+                <img src="./assets/icon-board.svg" alt="board" />
+                <p class="menu-title">Platform Launch</p>
+              </a>
+              <a href="#2" class="menu" data-id="2">
+                <img src="./assets/icon-board.svg" alt="board" />
+                <p class="menu-title">Marketing Plan</p>
+              </a>
+              <a href="#3" class="menu" data-id="3">
+                <img src="./assets/icon-board.svg" alt="board" />
+                <p class="menu-title">Roadmap</p>
+              </a>
+            </div>
+            <div class="kanban-menu-new">
+              <!-- Code goes here -->
+            </div>
+            <div class="kanban-menu-add">
+              <img src="./assets/icon-board-purple.svg" alt="board" />
+              <p class="menu-title">+ Create New Board</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="kanban-main">
+        <div class="kanban-navbar">
+          <p class="title">Platform Launch</p>
+          <div class="kanban-nav-right">
+            <button class="new-task-btn">+Add New Task</button>
+            <img
+              src="./assets/icon-vertical-ellipsis.svg"
+              alt=""
+              class="dots"
+            />
+          </div>
+        </div>
+        <div class="kanban-tasks">
+          <div class="kanban-task" id="1">
+            <div class="kanban-todo"></div>
+            <div class="kanban-doing"></div>
+            <div class="kanban-done"></div>
+          </div>
+          <div class="kanban-task" id="2"></div>
+          <div class="kanban-task" id="3"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
