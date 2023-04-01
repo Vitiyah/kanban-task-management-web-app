@@ -22,6 +22,40 @@
     <title>Kanban task management web app</title>
   </head>
   <body>
+    <div class="task-modal">
+      <div class="modal-box">
+        <img src="./assets/icon-cross.svg" alt="" class="form-cross" />
+        <div class="title-section">
+          <label for="newtitle">Task Title</label>
+          <input
+            type="text"
+            id="newtitle"
+            placeholder="title"
+            class="newtitle"
+          />
+          <label for="subtasks">SubTasks</label>
+          <input
+            type="text"
+            id="subtasks"
+            placeholder="Sub tasks"
+            class="subtasks"
+          />
+          <input
+            type="text"
+            id="subtasks"
+            placeholder="Sub tasks"
+            class="subtasks"
+          />
+          <input
+            type="text"
+            id="subtasks"
+            placeholder="Sub tasks"
+            class="subtasks"
+          />
+        </div>
+        <button class="save">Save</button>
+      </div>
+    </div>
     <div class="kanban-hero">
       <div class="kanban-sidebar">
         <div class="kanban-sidebar-inner">
@@ -72,27 +106,65 @@
         </div>
         <div class="kanban-tasks">
           <div class="kanban-task active" id="1">
-            <div class="kanban-todo">
+            <div class="kanban-todo droppables">
               <div class="header">
                 <div class="circle circle-1"></div>
                 <p>TODO(<span>0</span>)</p>
               </div>
             </div>
-            <div class="kanban-doing">
+            <div class="kanban-doing droppables">
               <div class="header">
                 <div class="circle circle-2"></div>
                 <p>DOING(<span>0</span>)</p>
               </div>
             </div>
-            <div class="kanban-done">
+            <div class="kanban-done droppables">
               <div class="header">
                 <div class="circle circle-3"></div>
                 <p>DONE(<span>0</span>)</p>
               </div>
             </div>
           </div>
-          <div class="kanban-task" id="2"></div>
-          <div class="kanban-task" id="3"></div>
+          <div class="kanban-task" id="2">
+            <div class="kanban-todo-2 droppables">
+              <div class="header">
+                <div class="circle circle-1"></div>
+                <p>TODO(<span>0</span>)</p>
+              </div>
+            </div>
+            <div class="kanban-doing-2 droppables">
+              <div class="header">
+                <div class="circle circle-2"></div>
+                <p>DOING(<span>0</span>)</p>
+              </div>
+            </div>
+            <div class="kanban-done-2 droppables">
+              <div class="header">
+                <div class="circle circle-3"></div>
+                <p>DONE(<span>0</span>)</p>
+              </div>
+            </div>
+          </div>
+          <div class="kanban-task" id="3">
+            <div class="kanban-todo-3 droppables">
+              <div class="header">
+                <div class="circle circle-1"></div>
+                <p>TODO(<span>0</span>)</p>
+              </div>
+            </div>
+            <div class="kanban-doing-3 droppables">
+              <div class="header">
+                <div class="circle circle-2"></div>
+                <p>DOING(<span>0</span>)</p>
+              </div>
+            </div>
+            <div class="kanban-done-3 droppables">
+              <div class="header">
+                <div class="circle circle-3"></div>
+                <p>DONE(<span>0</span>)</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

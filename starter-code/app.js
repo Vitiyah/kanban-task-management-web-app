@@ -11,18 +11,134 @@ const newKanban = document.querySelector(".kanban-tasks");
 const file = "./data.json";
 let count = 3;
 
-async function getText(file) {
-  let x = await fetch(file);
-  let y = await x.text();
-  // console.log(y);
-}
+const droppables = document.querySelectorAll(".droppables");
+const draggables = document.querySelectorAll(".draggables");
 
-const kanbanFunc = () => {
-  addMenu();
-  titleChange();
-  contentChange();
-  getText(file);
-};
+document.addEventListener("dragstart", (e) => {
+  if (e.target.classList.contains("draggables")) {
+    e.target.classList.add("dragging");
+  }
+});
+
+document.addEventListener("dragend", (e) => {
+  if (e.target.classList.contains("draggables")) {
+    e.target.classList.remove("dragging");
+  }
+});
+
+droppables.forEach((droppable) => {
+  droppable.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    const dragging = document.querySelector(".dragging");
+    droppable.append(dragging);
+  });
+});
+
+async function getText(file) {
+  let response = await fetch(file);
+  let data = await response.json();
+  const dataTodo = data["boards"][0]["columns"][0]["tasks"];
+  const dataDoing = data["boards"][0]["columns"][1]["tasks"];
+  const dataDone = data["boards"][0]["columns"][2]["tasks"];
+  const dataTodo2 = data["boards"][1]["columns"][0]["tasks"];
+  const dataDoing2 = data["boards"][1]["columns"][1]["tasks"];
+  const dataDone2 = data["boards"][1]["columns"][2]["tasks"];
+  const dataTodo3 = data["boards"][2]["columns"][0]["tasks"];
+  const dataDoing3 = data["boards"][2]["columns"][1]["tasks"];
+  const dataDone3 = data["boards"][2]["columns"][2]["tasks"];
+
+  dataTodo.forEach((item) => {
+    const kanbanTodo = document.querySelector(".kanban-todo");
+    const addTask = document.createElement("div");
+    addTask.classList.add("todo-task");
+    addTask.classList.add("draggables");
+    addTask.setAttribute("draggable", "true");
+    addTask.innerHTML += `<p class="todo-header">${item?.title}</p>
+                <p class="todo-sub">0 of ${item?.subtasks.length} subtasks</p>`;
+    kanbanTodo.appendChild(addTask);
+  });
+
+  dataDoing.forEach((item) => {
+    const kanbanDoing = document.querySelector(".kanban-doing");
+    const addTask = document.createElement("div");
+    addTask.classList.add("todo-task");
+    addTask.classList.add("draggables");
+    addTask.setAttribute("draggable", "true");
+    addTask.innerHTML += `<p class="todo-header">${item?.title}</p>
+                <p class="todo-sub">0 of ${item?.subtasks.length} subtasks</p>`;
+    kanbanDoing.appendChild(addTask);
+  });
+  dataDone.forEach((item) => {
+    const kanbanDone = document.querySelector(".kanban-done");
+    const addTask = document.createElement("div");
+    addTask.classList.add("todo-task");
+    addTask.classList.add("draggables");
+    addTask.setAttribute("draggable", "true");
+    addTask.innerHTML += `<p class="todo-header">${item?.title}</p>
+                <p class="todo-sub">0 of ${item?.subtasks.length} subtasks</p>`;
+    kanbanDone.appendChild(addTask);
+  });
+  dataTodo2.forEach((item) => {
+    const kanbanTodo2 = document.querySelector(".kanban-todo-2");
+    const addTask2 = document.createElement("div");
+    addTask2.classList.add("todo-task");
+    addTask2.classList.add("draggables");
+    addTask2.setAttribute("draggable", "true");
+    addTask2.innerHTML += `<p class="todo-header">${item?.title}</p>
+                <p class="todo-sub">0 of ${item?.subtasks.length} subtasks</p>`;
+    kanbanTodo2.appendChild(addTask2);
+  });
+  dataDoing2.forEach((item) => {
+    const kanbanDoing2 = document.querySelector(".kanban-doing-2");
+    const addTask2 = document.createElement("div");
+    addTask2.classList.add("todo-task");
+    addTask2.classList.add("draggables");
+    addTask2.setAttribute("draggable", "true");
+    addTask2.innerHTML += `<p class="todo-header">${item?.title}</p>
+                <p class="todo-sub">0 of ${item?.subtasks.length} subtasks</p>`;
+    kanbanDoing2.appendChild(addTask2);
+  });
+  dataDone2.forEach((item) => {
+    const kanbanDone2 = document.querySelector(".kanban-done-2");
+    const addTask2 = document.createElement("div");
+    addTask2.classList.add("todo-task");
+    addTask2.classList.add("draggables");
+    addTask2.setAttribute("draggable", "true");
+    addTask2.innerHTML += `<p class="todo-header">${item?.title}</p>
+                <p class="todo-sub">0 of ${item?.subtasks.length} subtasks</p>`;
+    kanbanDone2.appendChild(addTask2);
+  });
+  dataTodo3.forEach((item) => {
+    const kanbanTodo3 = document.querySelector(".kanban-todo-3");
+    const addTask3 = document.createElement("div");
+    addTask3.classList.add("todo-task");
+    addTask3.classList.add("draggables");
+    addTask3.setAttribute("draggable", "true");
+    addTask3.innerHTML += `<p class="todo-header">${item?.title}</p>
+                <p class="todo-sub">0 of ${item?.subtasks.length} subtasks</p>`;
+    kanbanTodo3.appendChild(addTask3);
+  });
+  dataDoing3.forEach((item) => {
+    const kanbanDoing3 = document.querySelector(".kanban-doing-3");
+    const addTask3 = document.createElement("div");
+    addTask3.classList.add("todo-task");
+    addTask3.classList.add("draggables");
+    addTask3.setAttribute("draggable", "true");
+    addTask3.innerHTML += `<p class="todo-header">${item?.title}</p>
+                <p class="todo-sub">0 of ${item?.subtasks.length} subtasks</p>`;
+    kanbanDoing3.appendChild(addTask3);
+  });
+  dataDone3.forEach((item) => {
+    const kanbanDone3 = document.querySelector(".kanban-done-3");
+    const addTask3 = document.createElement("div");
+    addTask3.classList.add("todo-task");
+    addTask3.classList.add("draggables");
+    addTask3.setAttribute("draggable", "true");
+    addTask3.innerHTML += `<p class="todo-header">${item?.title}</p>
+                <p class="todo-sub">0 of ${item?.subtasks.length} subtasks</p>`;
+    kanbanDone3.appendChild(addTask3);
+  });
+}
 
 const addMenu = () => {
   kanbanNew.addEventListener("click", () => {
@@ -86,6 +202,43 @@ const contentChange = () => {
   });
 };
 
-const addTask = () => {};
+const addNewTask = () => {
+  const newTaskBtn = document.querySelector(".new-task-btn");
+  const taskModal = document.querySelector(".task-modal");
+  const crossForm = document.querySelector(".form-cross");
+  const inputTitle = document.querySelector(".newtitle");
+  const saveBtn = document.querySelector(".save");
+  const kanbanTodo = document.querySelector(".kanban-todo");
+  const subtasks = document.querySelectorAll(".subtasks");
+  newTaskBtn.addEventListener("click", (e) => {
+    taskModal.style.display = "block";
+  });
+  saveBtn.addEventListener("click", (e) => {
+    let subCount = 0;
+    subtasks.forEach((sub) => {
+      if (sub.value !== "") {
+        subCount++;
+      }
+    });
+    const addTask = document.createElement("div");
+    addTask.classList.add("todo-task");
+    addTask.classList.add("draggables");
+    addTask.setAttribute("draggable", "true");
+    addTask.innerHTML += `<p class="todo-header">${inputTitle.value}</p>
+                <p class="todo-sub">${subCount} of 3 subtasks</p>`;
+    kanbanTodo.appendChild(addTask);
+  });
+  crossForm.addEventListener("click", (e) => {
+    taskModal.style.display = "none";
+  });
+};
+
+const kanbanFunc = () => {
+  addMenu();
+  titleChange();
+  contentChange();
+  getText(file);
+  addNewTask();
+};
 
 kanbanFunc();
