@@ -193,3 +193,107 @@ body {
 .circle-3 {
   background: rgb(9, 203, 203);
 }
+
+.todo-task {
+  width: 90%;
+  height: 5rem;
+  margin: 1rem 0;
+  background: rgb(63, 58, 74);
+  border-radius: 3px;
+  display: flex;
+  gap: 0.2rem;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+  cursor: move;
+}
+
+.todo-header {
+  font-weight: 600;
+  color: var(--font-white);
+}
+
+.todo-sub {
+  font-size: 0.8rem;
+}
+
+.droppables {
+  height: calc(100vh - 7rem);
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.droppables::-webkit-scrollbar {
+  display: none;
+}
+
+.new-task-btn {
+  cursor: pointer;
+}
+
+.task-modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+.modal-box {
+  width: 400px;
+  height: 500px;
+  background: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+}
+
+.form-cross {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+
+.title-section {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1rem;
+}
+
+input {
+  height: 2rem;
+  padding: 0 1rem;
+}
+
+input::placeholder {
+  text-transform: capitalize;
+}
+
+.save {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 2rem;
+  background: var(--dark-purple);
+  border: none;
+  outline: none;
+  color: var(--font-white);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.dots {
+  cursor: pointer;
+}
